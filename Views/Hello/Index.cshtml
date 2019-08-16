@@ -19,35 +19,51 @@
             width: 200px;
             vertical-align: top;
         }
+        .validationErrors{
+            color: red;
+        }
     </style>
 
 </head>
 
 <body>
+
     <div>
-        <form class="form" action="result" method="post">
-            <input type="text" name="test">
+        <form class="form" asp-action="Result" asp-controller="Hello" method="post">
+            <div class="validationErrors">
+                <span asp-validation-for="Name"></span>
+                <br>
+                <span asp-validation-for="Location"></span>
+                <br>
+                <span asp-validation-for="FavLanguage"></span>
+                <br>
+                <span asp-validation-for="Comment"></span>
+            </div>
             <p><label asp-for="Name">Your Name: </label>
+
                 <input asp-for="Name" type="text" /></p>
             <p><label asp-for="Location">Dojo Location: </label>
                 <select asp-for="Location">
-                    <option value=null>Select One</option>
+                    <option value="">Select One</option>
                     <option value="San Jose">San Jose</option>
                     <option value="Seattle">Seattle</option>
                     <option value="Chicago">Chicago</option>
                 </select> </p>
 
             <p><label asp-for="FavLanguage">Favorite Language: </label>
+
                 <select asp-for="FavLanguage">
-                    <option value=null>Select One</option>
+                    <option value="">Select One</option>
+
                     <option value="Python">Python</option>
                     <option value="Java">Java</option>
                     <option value="C#">C#</option>
                 </select> </p>
+
             <p><label asp-for="Comment">Comment (optional): </label>
                 <textarea asp-for="Comment" rows="5"></textarea> </p>
             <label></label>
-            <input type="submit" value="submit"/>
+            <input type="submit" value="submit" />
         </form>
     </div>
 </body>
