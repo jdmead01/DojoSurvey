@@ -5,7 +5,7 @@
 // create directory. Within file create the project:
 
 ```terminal
-dotnet dotnet new web --no-https -o <ProjectName>
+dotnet new web --no-https -o <ProjectName>
 ```
 // Create the following folders in your project manually
 
